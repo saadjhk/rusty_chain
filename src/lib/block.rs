@@ -35,6 +35,10 @@ impl Block {
 
         self.block_hash = Digest::finalize(sha_hasher).iter().cloned().collect();
     }
+
+    pub fn get_transactions_count(&self) -> u32 {
+        self.transactions.len() as u32
+    }
 }
 
 impl fmt::Display for Block {
